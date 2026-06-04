@@ -776,10 +776,7 @@ function goStep2() {
   if (!alone) missing.push("一人かどうか");
   if (!feeling) missing.push("今の気持ち");
 
-  if (missing.length > 0) {
-    alert("未入力の項目があります：\n" + missing.join("、"));
-    return;
-  }
+  
 
   showOnly("step2");
 }
@@ -813,15 +810,9 @@ function goStep3() {
   const placeType = document.getElementById("placeType").value;
   const surrounding = document.getElementById("surrounding").value.trim();
 
-  if (pinLat === null || pinLng === null) {
-    alert("地図上で現在地ピンを立ててください。");
-    return;
-  }
+  
 
-  if (!locationText || !placeType || !surrounding) {
-    alert("現在地の説明・近くにあるもの・周囲の様子を入力してください。");
-    return;
-  }
+  
 
   const condition = document.getElementById("condition").value;
   const situationBox = document.getElementById("situationBox");
@@ -830,7 +821,7 @@ function goStep3() {
 
   message += "あなたは地図上に現在地を指定しました。<br>";
   message += "現在地の説明：" + escapeHtml(locationText) + "<br>";
-  message += "緯度：" + pinLat.toFixed(6) + "、経度：" + pinLng.toFixed(6) + "<br><br>";
+  message += (pinLat==null||pinLng==null) ? "地図ピン未設定<br><br>" : "緯度：" + pinLat.toFixed(6) + "、経度：" + pinLng.toFixed(6) + "<br><br>";
 
   message += "<strong>地図情報について：</strong><br>";
   message += "地図は現在地を考えるための参考です。実際の安全性を保証するものではありません。<br><br>";
@@ -906,10 +897,7 @@ function goStep5() {
   const infoTrust = document.getElementById("infoTrust").value;
   const trustReason = document.getElementById("trustReason").value.trim();
 
-  if (!infoTrust || !trustReason) {
-    alert("情報の扱い方と理由を入力してください。");
-    return;
-  }
+  
 
   showOnly("step5");
 }
@@ -925,10 +913,7 @@ function goStep7() {
   const firstReason = document.getElementById("firstReason").value.trim();
   const firstWorry = document.getElementById("firstWorry").value.trim();
 
-  if (!firstReason || !firstWorry) {
-    alert("判断理由と迷ったことを入力してください。");
-    return;
-  }
+  
 
   selectedSituationChange = randomItem(situationChanges);
 
@@ -949,10 +934,7 @@ function showGuidance() {
   const secondReason = document.getElementById("secondReason").value.trim();
   const changeReason = document.getElementById("changeReason").value.trim();
 
-  if (!secondReason || !changeReason) {
-    alert("再判断の理由と、変えたこと・変えなかったことを書いてください。");
-    return;
-  }
+  
 
   const condition = document.getElementById("condition").value;
   const placeType = document.getElementById("placeType").value;
@@ -1063,7 +1045,7 @@ function showSummary() {
       <tr><th>状態</th><td>${escapeHtml(r.condition)}</td></tr>
       <tr><th>状況</th><td>${escapeHtml(r.alone)}</td></tr>
       <tr><th>気持ち</th><td>${escapeHtml(r.feeling)}</td></tr>
-      <tr><th>地図上の位置</th><td>緯度:${r.pinLat.toFixed(6)} / 経度:${r.pinLng.toFixed(6)}</td></tr>
+      <tr><th>地図上の位置</th><td>${(r.pinLat==null||r.pinLng==null) ? "未入力" : `緯度:${r.pinLat.toFixed(6)} / 経度:${r.pinLng.toFixed(6)}`}</td></tr>
       <tr><th>現在地</th><td>${escapeHtml(r.location)}</td></tr>
       <tr><th>場所の特徴</th><td>${escapeHtml(r.placeType)}</td></tr>
       <tr><th>画像</th><td>${r.imageData ? `<img src="${r.imageData}" class="preview-img">` : "なし"}</td></tr>
