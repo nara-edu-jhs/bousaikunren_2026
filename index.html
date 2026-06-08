@@ -314,16 +314,36 @@ body.page-step8 .page-title-card { border-left-color: #5d4037; }
 body.page-step9 .page-title-card { border-left-color: #00695c; }
 body.page-step10 .page-title-card { border-left-color: #283593; }
 </style>
+
+<style>
+.furigana-off rt{display:none;}
+#furiganaToggle{
+position:fixed;
+top:10px;
+right:10px;
+z-index:10000;
+width:auto;
+padding:8px 12px;
+}
+</style>
+
 </head>
 
 <body>
+
+<button id="furiganaToggle"
+onclick="document.body.classList.toggle('furigana-off');
+this.textContent=document.body.classList.contains('furigana-off')?'ふりがなON':'ふりがなOFF';">
+ふりがなOFF
+</button>
+
 
 <header>
   <h1>避難判断・安否確認システム</h1>
 </header>
 
 <div class="warning">
-  ※これは避難訓練(ぼうさいくんれん)・学習用(がくしゅうよう)のシステムです。実際(じっさい)の災害時(さいがい)は学校(がっこう)・自治体(じちたい)・警察(けいさつ)・消防等(しょうぼうとう)の指示(しじ)を優先(ゆうせん)してください。
+  ※これは<ruby>避難訓練<rt>ぼうさいくんれん</rt></ruby>・<ruby>学習用<rt>がくしゅうよう</rt></ruby>のシステムです。<ruby>実際<rt>じっさい</rt></ruby>の<ruby>災害時<rt>さいがい</rt></ruby>は<ruby>学校<rt>がっこう</rt></ruby>・<ruby>自治体<rt>じちたい</rt></ruby>・<ruby>警察<rt>けいさつ</rt></ruby>・<ruby>消防等<rt>しょうぼうとう</rt></ruby>の<ruby>指示<rt>しじ</rt></ruby>を<ruby>優先<rt>ゆうせん</rt></ruby>してください。
 </div>
 
 <main>
@@ -337,46 +357,46 @@ body.page-step10 .page-title-card { border-left-color: #283593; }
 </div>
 
 <div id="startCard" class="card">
-  <h2>現在(げんざい)の想定(そうてい)</h2>
+  <h2><ruby>現在<rt>げんざい</rt></ruby>の<ruby>想定<rt>そうてい</rt></ruby></h2>
   <p>
-    下校直後、通学路上で強い地震の揺れを感じました。<br>
-    あなたは今、自分の安全を確認し、周囲の状況や不確かな情報をもとに、次の行動を判断する必要があります。
+    <ruby>下校直後<rt>げこうちょくご</rt></ruby>、<ruby>通学路上<rt>つうがくろじょう</rt></ruby>で<ruby>強<rt>つよ</rt></ruby>い<ruby>地震<rt>じしん</rt></ruby>の<ruby>揺<rt>ゆ</rt></ruby>れを<ruby>感<rt>かん</rt></ruby>じました。<br>
+    あなたは<ruby>今<rt>いま</rt></ruby>、<ruby>自分<rt>じぶん</rt></ruby>の<ruby>安全<rt>あんぜん</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>し、<ruby>周囲<rt>しゅうい</rt></ruby>の<ruby>状況<rt>じょうきょう</rt></ruby>や<ruby>不確<rt>ふたし</rt></ruby>かな<ruby>情報<rt>じょうほう</rt></ruby>をもとに、<ruby>次<rt>つぎ</rt></ruby>の<ruby>行動<rt>こうどう</rt></ruby>を<ruby>判断<rt>はんだん</rt></ruby>する<ruby>必要<rt>ひつよう</rt></ruby>があります。
   </p>
 
   <div class="flow">
-    <div class="node">地震発生</div>
+    <div class="node"><ruby>地震発生<rt>じしんはっせい</rt></ruby></div>
     <div class="arrow">↓</div>
-    <div class="node">安否確認</div>
+    <div class="node"><ruby>安否確認<rt>あんぴかくにん</rt></ruby></div>
     <div class="arrow">↓</div>
-    <div class="node">地図上で現在地を指定</div>
+    <div class="node"><ruby>地図上<rt>ちずじょう</rt></ruby>で<ruby>現在地<rt>げんざいち</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby></div>
     <div class="arrow">↓</div>
-    <div class="node">写真・周囲状況を記録</div>
+    <div class="node"><ruby>周囲<rt>しゅうい</rt></ruby>の<ruby>状況<rt>じょうきょう</rt></ruby>を<ruby>記録<rt>きろく</rt></ruby></div>
     <div class="arrow">↓</div>
-    <div class="node">SNS・未確認情報を判断</div>
+    <div class="node">SNS・<ruby>未確認情報<rt>みかくにんじょうほう</rt></ruby>を<ruby>判断<rt>はんだん</rt></ruby></div>
     <div class="arrow">↓</div>
-    <div class="node">避難行動を選択</div>
+    <div class="node"><ruby>避難行動<rt>ひなんこうどう</rt></ruby>を<ruby>選択<rt>せんたく</rt></ruby></div>
     <div class="arrow">↓</div>
-    <div class="node">状況変化後に再判断</div>
+    <div class="node"><ruby>状況変化後<rt>じょうきょうへんかご</rt></ruby>に<ruby>再判断<rt>さいはんだん</rt></ruby></div>
   </div>
 
-  <button onclick="startSystem()">開始する</button>
+  <button onclick="startSystem()"><ruby>開始<rt>かいし</rt></ruby>する</button>
 </div>
 
 <div id="step1" class="card hidden">
-  <div class="step">STEP 1　安否確認</div>
-  <h2>あなたの状態を入力してください</h2>
+  <div class="step">STEP 1　<ruby>安否確認<rt>あんぴかくにん</rt></ruby></div>
+  <h2>あなたの<ruby>状態<rt>じょうたい</rt></ruby>を<ruby>入力<rt>にゅうりょく</rt></ruby>してください</h2>
 
-  <label>学年</label>
+  <label><ruby>学年<rt>がくねん</rt></ruby></label>
 <select id="grade">
-  <option value="">選択してください</option>
+  <option value="">選択(せんたく)しててください</option>
   <option value="1年">1</option>
   <option value="2年">2</option>
   <option value="3年">3</option>
 </select>
 
-<label>組</label>
+<label><ruby>組<rt>くみ</rt></ruby></label>
 <select id="className">
-  <option value="">選択してください</option>
+  <option value="">選択(せんたく)しててください</option>
   <option value="1組">1</option>
   <option value="2組">2</option>
   <option value="3組">3</option>
@@ -384,220 +404,220 @@ body.page-step10 .page-title-card { border-left-color: #283593; }
   <option value="5組">5・わかば</option>
 </select>
 
-<label>出席番号(半角数字のみ入力)</label>
+<label><ruby>出席番号<rt>しゅっせきばんごう</rt></ruby>(<ruby>半角数字<rt>はんかくすうじ</rt></ruby>のみ<ruby>入力<rt>にゅうりょく</rt></ruby>)</label>
 <input type="number" id="studentNumber" min="1" max="50" placeholder="例：12">
 
-<label>名前</label>
+<label><ruby>名前<rt>なまえ</rt></ruby></label>
 <input type="text" id="name" placeholder="例：山田太郎">
-  <label>現在の状態</label>
+  <label><ruby>現在<rt>げんざい</rt></ruby>の<ruby>状態<rt>じょうたい</rt></ruby></label>
   <select id="condition">
-    <option value="">選択してください</option>
-    <option value="無事">無事</option>
-    <option value="軽いけが">軽いけが</option>
-    <option value="動けない">動けない</option>
-    <option value="友人がけが">友人がけがをしている</option>
+    <option value="">選択(せんたく)しててください</option>
+    <option value="無事">無事(ぶじ)</ruby></option>
+    <option value="軽いけが">軽(かる)いけが</option>
+    <option value="動けない">動(うご)けない</option>
+    <option value="友人がけが">友達(ともだち)がけがをしている</option>
   </select>
 
-  <label>今、一人ですか？</label>
+  <label><ruby>今<rt>いま</rt></ruby>、<ruby>一人<rt>ひとり</rt></ruby>ですか？</label>
   <select id="alone">
-    <option value="">選択してください</option>
-    <option value="一人">一人</option>
-    <option value="友人と一緒">友人と一緒</option>
-    <option value="周囲に大人がいる">周囲に大人がいる</option>
+    <option value="">選択(せんたく)しててください</option>
+    <option value="一人">一人(ひとり)</option>
+    <option value="友達と一緒">友達(ともだち)と一緒(いっしょ)</option>
+    <option value="周囲に大人がいる">周囲(しゅうい)に大人(おとな)がいる</option>
   </select>
 
-  <label>今の気持ち</label>
+  <label><ruby>今<rt>いま</rt></ruby>の<ruby>気持<rt>きも</rt></ruby>ち</label>
   <select id="feeling">
-    <option value="">選択してください</option>
-    <option value="落ち着いている">落ち着いている</option>
-    <option value="少し不安">少し不安</option>
-    <option value="かなり怖い">かなり怖い</option>
-    <option value="何をすればよいか分からない">何をすればよいか分からない</option>
+    <option value="">選択(せんたく)しててください</option>
+    <option value="落ち着いている">落(お)ち着(つ)いている</option>
+    <option value="少し不安">少(すこ)し不安(ふあん)</option>
+    <option value="かなり怖い">かなり怖(こわ)い</option>
+    <option value="何をすればよいか分からない">何(なに)をすればよいか分(わ)からない</option>
   </select>
 
-  <button onclick="goStep2()">次へ</button>
+  <button onclick="goStep2()"><ruby>次<rt>つぎ</rt></ruby>へ</button>
 </div>
 
 <div id="step2" class="card hidden">
-  <div class="step">STEP 2　現在地確認</div>
-  <h2>地図上で現在地を指定してください</h2>
+  <div class="step">STEP 2　<ruby>現在地確認<rt>げんざいちかくにん</rt></ruby></div>
+  <h2><ruby>地図上<rt>ちずじょう</rt></ruby>で<ruby>現在地<rt>げんざいち</rt></ruby>を<ruby>指定<rt>してい</rt></ruby>してください</h2>
 
   <p class="small">
-    GPSは使いません。自分がいると思う場所を地図上でタップしてください。
+    GPSは<ruby>使<rt>つか</rt></ruby>いません。<ruby>自分<rt>じぶん</rt></ruby>がいると<ruby>思<rt>おも</rt></ruby>う<ruby>場所<rt>ばしょ</rt></ruby>を<ruby>地図上<rt>ちずじょう</rt></ruby>でタップしてください。
   </p>
 
   <div class="hazard-warning">
-    <strong>重要：</strong><br>
-    この地図は避難訓練・防災学習のための参考情報です。<br>
-    実際の災害時には、この画面だけを唯一の判断材料にせず、学校・自治体・警察・消防・気象庁等の最新情報と、目の前の状況を必ず合わせて判断してください。
+    <strong><ruby>重要<rt>じゅうよう</rt></ruby>：</strong><br>
+    この<ruby>地図<rt>ちず</rt></ruby>は<ruby>避難訓練<rt>ひなんくんれん</rt></ruby>・<ruby>防災学習<rt>ぼうさいがくしゅう</rt></ruby>のための<ruby>参考情報<rt>さんこうじょうほう</rt></ruby>です。<br>
+    <ruby>実際<rt>じっさい</rt></ruby>の<ruby>災害時<rt>さいがいじ</rt></ruby>には、この<ruby>画面<rt>がめん</rt></ruby>だけを<ruby>唯一<rt>ゆいいつ</rt></ruby>の<ruby>判断材料<rt>はんだんざいりょう</rt></ruby>にせず、<ruby>学校<rt>がっこう</rt></ruby>・<ruby>自治体<rt>じちたい</rt></ruby>・<ruby>警察<rt>けいさつ</rt></ruby>・<ruby>消防<rt>しょうぼう</rt></ruby>・<ruby>気象庁等<rt>きしょうちょうとう</rt></ruby>の<ruby>最新情報<rt>さいしんじょうほう</rt></ruby>と、<ruby>目<rt>め</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>の<ruby>状況<rt>じょうきょう</rt></ruby>を<ruby>必<rt>かなら</rt></ruby>ず<ruby>合<rt>あ</rt></ruby>わせて<ruby>判断<rt>はんだん</rt></ruby>してください。
   </div>
 
   <div id="mapBox"></div>
-  <div id="pinText" class="pin-text">現在地ピン：未設定</div>
+  <div id="pinText" class="pin-text"><ruby>現在地<rt>げんざいち</rt></ruby>ピン：<ruby>未設定<rt>みせってい</rt></ruby></div>
 
-  <label>現在地の説明</label>
+  <label><ruby>現在地<rt>げんざいち</rt></ruby>の<ruby>説明<rt>せつめい</rt></ruby></label>
   <input type="text" id="locationText" placeholder="例：〇〇交差点、△△公園前、□□橋の近く">
 
-  <label>近くにあるもの</label>
+  <label><ruby>近<rt>ちか</rt></ruby>くにあるもの</label>
   <select id="placeType">
-    <option value="">選択してください</option>
-    <option value="広い公園">広い公園</option>
-    <option value="住宅街">住宅街</option>
-    <option value="ブロック塀の近く">ブロック塀の近く</option>
-    <option value="川・橋の近く">川・橋の近く</option>
-    <option value="駅・商店街">駅・商店街</option>
-    <option value="学校の近く">学校の近く</option>
-    <option value="自宅の近く">自宅の近く</option>
+    <option value="">選択(せんたく)しててください</option>
+    <option value="広い公園">広(ひろ)い公園(こうえん)</option>
+    <option value="住宅街">住宅街(じゅうたくがい)</option>
+    <option value="ブロック塀の近く">ブロック塀(へい)の近(ちか)く</option>
+    <option value="川・橋の近く">川(かわ)・橋(はし)の近(ちか)く</option>
+    <option value="駅・商店街">駅(えき)・商店街(しょうてんがい)</option>
+    <option value="学校の近く">学校(がっこう)の近(ちか)く</option>
+    <option value="自宅の近く">自宅(じたく)の近(ちか)く</option>
   </select>
 
-  <label>周囲の写真をアップロード</label>
+  <label><ruby>周囲<rt>しゅうい</rt></ruby>の<ruby>写真<rt>しゃしん</rt></ruby>をアップロード</label>
   <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)">
   <div id="imagePreviewArea"></div>
 
-  <label>周囲の様子</label>
+  <label><ruby>周囲<rt>しゅうい</rt></ruby>の<ruby>様子<rt>ようす</rt></ruby></label>
   <textarea id="surrounding" placeholder="例：電柱が揺れている、塀がひび割れている、人が集まっている、火災のにおいがする"></textarea>
 
-  <button onclick="goStep3()">状況を確認する</button>
+  <button onclick="goStep3()"><ruby>状況<rt>じょうきょう</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>する</button>
 </div>
 
 <div id="step3" class="card hidden">
-  <div class="step">STEP 3　周囲状況の確認</div>
-  <h2>現在の状況</h2>
+  <div class="step">STEP 3　<ruby>周囲状況<rt>しゅういじょうきょう</rt></ruby>の<ruby>確認<rt>かくにん</rt></ruby></div>
+  <h2><ruby>現在<rt>げんざい</rt></ruby>の<ruby>状況<rt>じょうきょう</rt></ruby></h2>
   <div id="situationBox" class="result-box"></div>
 
   <div class="hazard-warning">
-    <strong>確認：</strong><br>
-    地図上では安全そうに見えても、実際には落下物・火災・倒壊・混雑・余震などの危険があります。必ず周囲を観察して判断してください。
+    <strong><ruby>確認<rt>かくにん</rt></ruby>：</strong><br>
+    <ruby>地図上<rt>ちずじょう</rt></ruby>では<ruby>安全<rt>あんぜん</rt></ruby>そうに<ruby>見<rt>み</rt></ruby>えても、<ruby>実際<rt>じっさい</rt></ruby>には<ruby>落下物<rt>らっかぶつ</rt></ruby>・<ruby>火災<rt>かさい</rt></ruby>・<ruby>倒壊<rt>とうかい</rt></ruby>・<ruby>混雑<rt>こんざつ</rt></ruby>・<ruby>余震<rt>よしん</rt></ruby>などの<ruby>危険<rt>きけん</rt></ruby>があります。<ruby>必<rt>かなら</rt></ruby>ず<ruby>周囲<rt>しゅうい</rt></ruby>を<ruby>観察<rt>かんさつ</rt></ruby>して<ruby>判断<rt>はんだん</rt></ruby>してください。
   </div>
 
-  <button onclick="goStep4()">入ってきた情報を確認する</button>
+  <button onclick="goStep4()"><ruby>入<rt>はい</rt></ruby>ってきた<ruby>情報<rt>じょうほう</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>する</button>
 </div>
 
 <div id="step4" class="card hidden">
-  <div class="step">STEP 4　曖昧な情報・SNS情報</div>
-  <h2>今、次のような情報が入ってきています</h2>
+  <div class="step">STEP 4　<ruby>曖昧<rt>あいまい</rt></ruby>な<ruby>情報<rt>じょうほう</rt></ruby>・SNS<ruby>情報<rt>じょうほう</rt></ruby></div>
+  <h2><ruby>今<rt>いま</rt></ruby>、<ruby>次<rt>つぎ</rt></ruby>のような<ruby>情報<rt>じょうほう</rt></ruby>が<ruby>入<rt>はい</rt></ruby>ってきています</h2>
 
   <div id="officialInfoBox" class="result-box uncertain"></div>
 
   <div class="sns-box">
-    <strong>SNS上の情報</strong>
+    <strong>SNS<ruby>上<rt>じょう</rt></ruby>の<ruby>情報<rt>じょうほう</rt></ruby></strong>
     <div id="snsArea"></div>
   </div>
 
-  <label>この情報をどう扱いますか？</label>
+  <label>この<ruby>情報<rt>じょうほう</rt></ruby>をどう<ruby>扱<rt>あつか</rt></ruby>いますか？</label>
   <select id="infoTrust">
-    <option value="">選択してください</option>
-    <option value="信じて行動する">信じて行動する</option>
-    <option value="一部参考にする">一部参考にする</option>
-    <option value="まだ信じない">まだ信じない</option>
-    <option value="他の情報と照合する">他の情報と照合する</option>
+    <option value="">選択(せんたく)しててください</option>
+    <option value="信じて行動する">信(しん)じて行動(こうどう)する</option>
+    <option value="一部参考にする">一部参考(いちぶさんこう)にする</option>
+    <option value="まだ信じない">まだ信(しん)じない</option>
+    <option value="他の情報と照合する">他(ほか)の情報(じょうほう)と照合(しょうごう)する</option>
   </select>
 
-  <label>そう考えた理由</label>
+  <label>そう<ruby>考<rt>かんが</rt></ruby>えた<ruby>理由<rt>りゆう</rt></ruby></label>
   <textarea id="trustReason" placeholder="例：発信元が分からないので、そのまま信じるのは危ないと思った。複数の情報を見て判断したい。"></textarea>
 
-  <button onclick="goStep5()">避難行動を選ぶ</button>
+  <button onclick="goStep5()"><ruby>避難行動<rt>ひなんこうどう</rt></ruby>を<ruby>選<rt>えら</rt></ruby>ぶ</button>
 </div>
 
 <div id="step5" class="card hidden">
-  <div class="step">STEP 5　1回目の避難判断</div>
-  <h2>次にどうしますか？</h2>
+  <div class="step">STEP 5　1<ruby>回目<rt>かいめ</rt></ruby>の<ruby>避難判断<rt>ひなんはんだん</rt></ruby></div>
+  <h2><ruby>次<rt>つぎ</rt></ruby>にどうしますか？</h2>
 
-  <button class="choice" onclick="chooseFirstAction('その場で安全確保')">その場で安全を確保する</button>
-  <button class="choice" onclick="chooseFirstAction('広い場所へ移動')">近くの広い場所へ移動する</button>
-  <button class="choice" onclick="chooseFirstAction('学校へ戻る')">学校へ戻る</button>
-  <button class="choice" onclick="chooseFirstAction('自宅へ向かう')">自宅へ向かう</button>
-  <button class="choice" onclick="chooseFirstAction('大人・近くの人に助けを求める')">大人や近くの人に助けを求める</button>
+  <button class="choice" onclick="chooseFirstAction('その場で安全確保')">その<ruby>場<rt>ば</rt></ruby>で<ruby>安全<rt>あんぜん</rt></ruby>を<ruby>確保<rt>かくほ</rt></ruby>する</button>
+  <button class="choice" onclick="chooseFirstAction('広い場所へ移動')"><ruby>近<rt>ちか</rt></ruby>くの<ruby>広<rt>ひろ</rt></ruby>い<ruby>場所<rt>ばしょ</rt></ruby>へ<ruby>移動<rt>いどう</rt></ruby>する</button>
+  <button class="choice" onclick="chooseFirstAction('学校へ戻る')"><ruby>学校<rt>がっこう</rt></ruby>へ<ruby>戻<rt>もど</rt></ruby>る</button>
+  <button class="choice" onclick="chooseFirstAction('自宅へ向かう')"><ruby>自宅<rt>じたく</rt></ruby>へ<ruby>向<rt>む</rt></ruby>かう</button>
+  <button class="choice" onclick="chooseFirstAction('大人・近くの人に助けを求める')"><ruby>大人<rt>おとな</rt></ruby>や<ruby>近<rt>ちか</rt></ruby>くの<ruby>人<rt>ひと</rt></ruby>に<ruby>助<rt>たす</rt></ruby>けを<ruby>求<rt>もと</rt></ruby>める</button>
 </div>
 
 <div id="step6" class="card hidden">
-  <div class="step">STEP 6　判断理由</div>
-  <h2>なぜその行動を選びましたか？</h2>
+  <div class="step">STEP 6　<ruby>判断理由<rt>はんだんりゆう</rt></ruby></div>
+  <h2>なぜその<ruby>行動<rt>いどう</rt></ruby>を<ruby>選<rt>えら</rt></ruby>びましたか？</h2>
 
   <div id="firstActionBox" class="result-box"></div>
 
-  <label>判断した理由</label>
+  <label><ruby>判断<rt>はんだん</rt></ruby>した<ruby>理由<rt>りゆう</rt></ruby></label>
   <textarea id="firstReason" placeholder="例：ブロック塀が近くにあり危険だと思ったから。広い場所の方が落下物が少ないと考えたから。"></textarea>
 
-  <label>迷ったこと</label>
+  <label><ruby>迷<rt>まよ</rt></ruby>ったこと</label>
   <textarea id="firstWorry" placeholder="例：学校に戻るべきか、公園で待つべきか迷った。SNSの情報が本当か分からなかった。"></textarea>
 
-  <button onclick="goStep7()">状況変化を確認する</button>
+  <button onclick="goStep7()"><ruby>状況変化<rt>じょうきょうへんか</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>する</button>
 </div>
 
 <div id="step7" class="card hidden">
-  <div class="step">STEP 7　状況変化</div>
-  <h2>数分後、状況が変わりました</h2>
+  <div class="step">STEP 7　<ruby>状況変化<rt>じょうきょうへんか</rt></ruby></div>
+  <h2><ruby>数分後<rt>すうふんご</rt></ruby>、<ruby>状況<rt>じょうきょう</rt></ruby>が<ruby>変<rt>か</rt></ruby>わりました</h2>
 
   <div id="changeBox" class="result-box emergency"></div>
 
-  <h2>もう一度判断してください</h2>
+  <h2>もう<ruby>一度判断<rt>いちどはんだん</rt></ruby>してください</h2>
 
-  <button class="choice" onclick="chooseSecondAction('その場で待機を続ける')">その場で待機を続ける</button>
-  <button class="choice" onclick="chooseSecondAction('別の広い場所へ移動する')">別の広い場所へ移動する</button>
-  <button class="choice" onclick="chooseSecondAction('学校へ連絡・移動を考える')">学校へ連絡・移動を考える</button>
-  <button class="choice" onclick="chooseSecondAction('自宅方面へ進む')">自宅方面へ進む</button>
-  <button class="choice" onclick="chooseSecondAction('周囲の大人に助けを求める')">周囲の大人に助けを求める</button>
+  <button class="choice" onclick="chooseSecondAction('その場で待機を続ける')">その<ruby>場<rt>ば</rt></ruby>で<ruby>待機<rt>たいき</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>ける</button>
+  <button class="choice" onclick="chooseSecondAction('別の広い場所へ移動する')"><ruby>別<rt>べつ</rt></ruby>の<ruby>広<rt>ひろ</rt></ruby>い<ruby>場所<rt>ばしょ</rt></ruby>へ<ruby>移動<rt>いどう</rt></ruby>する</button>
+  <button class="choice" onclick="chooseSecondAction('学校へ連絡・移動を考える')"><ruby>学校<rt>がっこう</rt></ruby>へ<ruby>連絡<rt>れんらく</rt></ruby>・<ruby>移動<rt>いどう</rt></ruby>を<ruby>考<rt>かんが</rt></ruby>える</button>
+  <button class="choice" onclick="chooseSecondAction('自宅方面へ進む')"><ruby>自宅方面<rt>じたくほうめん</rt></ruby>へ<ruby>進<rt>すす</rt></ruby>む</button>
+  <button class="choice" onclick="chooseSecondAction('周囲の大人に助けを求める')"><ruby>周囲<rt>しゅうい</rt></ruby>の<ruby>大人<rt>おとな</rt></ruby>に<ruby>助<rt>たす</rt></ruby>けを<ruby>求<rt>もと　</rt></ruby>める</button>
 </div>
 
 <div id="step8" class="card hidden">
-  <div class="step">STEP 8　再判断の理由</div>
-  <h2>再判断の理由を書いてください</h2>
+  <div class="step">STEP 8　<ruby>再判断<rt>さいはんだん</rt></ruby>の<ruby>理由<rt>りゆう</rt></ruby></div>
+  <h2><ruby>再判断<rt>さいはんだん</rt></ruby>の<ruby>理由<rt>りゆう</rt></ruby>を<ruby>書<rt>か</rt></ruby>いてください</h2>
 
   <div id="secondActionBox" class="result-box"></div>
 
-  <label>再判断した理由</label>
+  <label><ruby>再判断<rt>さいはんだん</rt></ruby>した<ruby>理由<rt>りゆう</rt></ruby></label>
   <textarea id="secondReason" placeholder="例：最初の場所は安全そうだったが、人が増えて混乱してきたので移動することにした。"></textarea>
 
-  <label>最初の判断から変えたこと・変えなかったこと</label>
+  <label><ruby>最初<rt>さいしょ</rt></ruby>の<ruby>判断<rt>はんだん</rt></ruby>から<ruby>変<rt>か</rt></ruby>えたこと・<ruby>変<rt>か</rt></ruby>えなかったこと</label>
   <textarea id="changeReason" placeholder="例：最初は学校へ戻ろうと思ったが、通学路に危険があると思い直した。"></textarea>
 
-  <button onclick="showGuidance()">避難誘導を表示する</button>
+  <button onclick="showGuidance()"><ruby>避難誘導<rt>ひなんゆうどう</rt></ruby>を<ruby>表示<rt>ひょうじ</rt></ruby>する</button>
 </div>
 
 <div id="step9" class="card hidden">
-  <div class="step">STEP 9　避難誘導</div>
-  <h2>あなたへの避難誘導</h2>
+  <div class="step">STEP 9　<ruby>避難誘導<rt>ひなんゆうどう</rt></ruby></div>
+  <h2>あなたへの<ruby>避難誘導<rt>ひなんゆうどう</rt></ruby></h2>
 
   <div id="guidanceBox" class="result-box"></div>
 
   <div class="hazard-warning">
-    <strong>最終確認：</strong><br>
-    この避難誘導は訓練用です。実際の災害では、必ず自治体・学校・警察・消防・気象庁等の最新情報を確認し、周囲の安全を最優先してください。
+    <strong><ruby>最終確認<rt>さいしゅうかくにん</rt></ruby>：</strong><br>
+    この<ruby>避難誘導<rt>ひなんゆうどう</rt></ruby>は<ruby>訓練用<rt>くんれんよう</rt></ruby>です。<ruby>実際<rt>じっさい</rt></ruby>の<ruby>災害<rt>さいがい</rt></ruby>では、<ruby>必<rt>かなら</rt></ruby>ず<ruby>自治体<rt>じちたい</rt></ruby>・<ruby>学校<rt>がっこう</rt></ruby>・<ruby>警察<rt>けいさつ</rt></ruby>・<ruby>消防<rt>しょうぼう</rt></ruby>・<ruby>気象庁等<rt>きしょうちょうとう</rt></ruby>の<ruby>最新情報<rt>さいしんじょうほう</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>し、<ruby>周囲<rt>しゅうい</rt></ruby>の<ruby>安全<rt>あんぜん</rt></ruby>を<ruby>最優先<rt>さいゆうせん</rt></ruby>してください。
   </div>
 
-  <button class="safe" onclick="saveRecord()">安否・判断を記録する</button>
+  <button class="safe" onclick="saveRecord()"><ruby>安否<rt>あんぴ</rt></ruby>・<ruby>判断<rt>はんだん</rt></ruby>を<ruby>記録<rt>きろく</rt></ruby>する</button>
 </div>
 
 <div id="step10" class="card hidden">
-  <div class="step">STEP 10　記録完了</div>
-  <h2>記録しました</h2>
+  <div class="step">STEP 10　<ruby>記録完了<rt>きろくかんりょう</rt></ruby></div>
+  <h2><ruby>記録<rt>きろく</rt></ruby>しました</h2>
 
   <div id="summaryBox"></div>
 
-  <button onclick="generatePrompt()">AI評価用プロンプトを作成する</button>
+  <button onclick="generatePrompt()">AI<ruby>評価用<rt>ひょうかよう</rt></ruby>プロンプトを<ruby>作成<rt>さくせい</rt></ruby>する</button>
   <textarea id="promptOutput" placeholder="ここにAI評価用プロンプトが表示されます"></textarea>
   <button onclick="copyPrompt()">プロンプトをコピーする</button>
 
   <div class="hazard-warning">
-    <strong>AI評価の方法：</strong><br>
-    ①「AI評価用プロンプトを作成する」を押す<br>
-    ②「プロンプトをコピーする」を押す<br>
-    ③ 下のボタンからAIスクテンを開く<br>
-    ④ AIスクテンの「AIに聞こう」に貼り付けて評価する
+    <strong>AI<ruby>評価<rt>ひょうか</rt></ruby>の<ruby>方法<rt>ほうほう</rt></ruby>：</strong><br>
+    ①「AI<ruby>評価用<rt>ひょうかよう</rt></ruby>プロンプトを<ruby>作成<rt>さくせい</rt></ruby>する」を<ruby>押<rt>お</rt></ruby>す<br>
+    ②「プロンプトをコピーする」を<ruby>押<rt>お</rt></ruby>す<br>
+    ③ <ruby>下<rt>した</rt></ruby>のボタンからAIスクテンを<ruby>開<rt>ひら</rt></ruby>く<br>
+    ④ AIスクテンの「AIに<ruby>聞<rt>き</rt></ruby>こう」に<ruby>貼<rt>は</rt></ruby>り<ruby>付<rt>つ</rt></ruby>けて<ruby>評価<rt>ひょうか</rt></ruby>する※<ruby>生徒用<rt>せいとよう</rt></ruby>パスワード「sb26」
   </div>
 
-  <button onclick="openSchoolAI()">AIスクテン「AIに聞こう」を開く</button>
+  <button onclick="openSchoolAI()">AIスクテン「AIに<ruby>聞<rt>き</rt></ruby>こう」を<ruby>開<rt>ひら</rt></ruby>く</button>
 
-  <button onclick="goToForm()">フォームへ提出する</button>
-  <button class="gray" onclick="resetSystem()">最初からやり直す</button>
+  <button onclick="goToForm()">フォームへ<ruby>提出<rt>ていしゅつ</rt></ruby>する</button>
+  <button class="gray" onclick="resetSystem()"><ruby>最初<rt>さいしょ</rt></ruby>からやり<ruby>直<rt>なお</rt></ruby>す</button>
 </div>
 
 <div id="teacherPanel" class="card hidden">
-  <h2>記録一覧</h2>
-  <p class="small">この端末内に保存された記録です。</p>
+  <h2><ruby>記録一覧<rt>きろくいちらん</rt></ruby></h2>
+  <p class="small">この<ruby>端末内<rt>たんまつない</rt></ruby>に<ruby>保存<rt>ほぞん</rt></ruby>された<ruby>記録<rt>きろく</rt></ruby>です。</p>
   <div id="recordTable"></div>
-  <button class="danger" onclick="clearRecords()">記録を削除する</button>
+  <button class="danger" onclick="clearRecords()"><ruby>記録<rt>きろく</rt></ruby>を<ruby>削除<rt>さくじょ</rt></ruby>する</button>
 </div>
 
 </main>
@@ -618,6 +638,95 @@ let imageName = "";
 let selectedOfficialInfo = "";
 let selectedSNSPosts = [];
 let selectedSituationChange = "";
+
+function addRuby(text) {
+  return text
+    .replace(/学校/g,"<ruby>学校<rt>がっこう</rt></ruby>")
+    .replace(/連絡/g,"<ruby>連絡<rt>れんらく</rt></ruby>")
+    .replace(/地域/g,"<ruby>地域<rt>ちいき</rt></ruby>")
+    .replace(/防災無線/g,"<ruby>防災無線<rt>ぼうさいむせん</rt></ruby>")
+    .replace(/安全/g,"<ruby>安全<rt>あんぜん</rt></ruby>")
+    .replace(/場所/g,"<ruby>場所<rt>ばしょ</rt></ruby>")
+    .replace(/待機/g,"<ruby>待機<rt>たいき</rt></ruby>")
+    .replace(/避難所/g,"<ruby>避難所<rt>ひなんじょ</rt></ruby>")
+    .replace(/開設/g,"<ruby>開設<rt>かいせつ</rt></ruby>")
+    .replace(/情報/g,"<ruby>情報<rt>じょうほう</rt></ruby>")
+    .replace(/混雑/g,"<ruby>混雑<rt>こんざつ</rt></ruby>")
+    .replace(/火災/g,"<ruby>火災<rt>かさい</rt></ruby>")
+    .replace(/未確認情報/g,"<ruby>未確認情報<rt>みかくにんじょうほう</rt></ruby>")
+    .replace(/消防/g,"<ruby>消防<rt>しょうぼう</rt></ruby>")
+    .replace(/確認/g,"<ruby>確認<rt>かくにん</rt></ruby>")
+    .replace(/道路/g,"<ruby>道路<rt>どうろ</rt></ruby>")
+    .replace(/通行/g,"<ruby>通行<rt>つうこう</rt></ruby>")
+    .replace(/余震/g,"<ruby>余震<rt>よしん</rt></ruby>")
+    .replace(/建物/g,"<ruby>建物<rt>たてもの</rt></ruby>")
+    .replace(/周囲/g,"<ruby>周囲<rt>しゅうい</rt></ruby>")
+    .replace(/状況/g,"<ruby>状況<rt>じょうきょう</rt></ruby>")
+    .replace(/判断/g,"<ruby>判断<rt>はんだん</rt></ruby>")
+.replace(/細い/g,"<ruby>細<rt>ほそ</rt></ruby>い")
+.replace(/細い道/g,"<ruby>細<rt>ほそ</rt></ruby>い<ruby>道<rt>みち</rt></ruby>")
+.replace(/道の端/g,"<ruby>道<rt>みち</rt></ruby>の<ruby>端<rt>はし</rt></ruby>")
+.replace(/家の近くを通る/g,"<ruby>家<rt>いえ</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くを<ruby>通<rt>とお</rt></ruby>る")
+.replace(/学校方面の道/g,"<ruby>学校<rt>がっこう</rt></ruby><ruby>方面<rt>ほうめん</rt></ruby>の<ruby>道<rt>みち</rt></ruby>")
+.replace(/瓦/g,"<ruby>瓦<rt>かわら</rt></ruby>")
+.replace(/見/g,"<ruby>見<rt>み</rt></ruby>")
+
+.replace(/近く/g,"<ruby>近<rt>ちか</rt></ruby>く")
+.replace(/通る/g,"<ruby>通<rt>とお</rt></ruby>る")
+.replace(/人/g,"<ruby>人<rt>ひと</rt></ruby>")
+.replace(/気/g,"<ruby>気<rt>き</rt></ruby>")
+.replace(/外/g,"<ruby>外<rt>そと</rt></ruby>")
+.replace(/上部/g,"<ruby>上部<rt>じょうぶ</rt></ruby>")
+.replace(/商店街/g,"<ruby>商店街<rt>しょうてんがい</rt></ruby>")
+.replace(/割れて/g,"<ruby>割<rt>わ</rt></ruby>れて")
+.replace(/沿い/g,"<ruby>沿<rt>ぞ</rt></ruby>い")
+.replace(/危ない/g,"<ruby>危<rt>あぶ</rt></ruby>ない")
+.replace(/満員/g,"<ruby>満員<rt>まんいん</rt></ruby>")
+.replace(/行っても/g,"<ruby>行<rt>い</rt></ruby>っても")
+.replace(/意味/g,"<ruby>意味<rt>いみ</rt></ruby>")
+.replace(/門/g,"<ruby>門<rt>もん</rt></ruby>")
+.replace(/開いて/g,"<ruby>開<rt>あ</rt></ruby>いて")
+.replace(/戻って/g,"<ruby>戻<rt>もど</rt></ruby>って")
+.replace(/自宅/g,"<ruby>自宅<rt>じたく</rt></ruby>")
+.replace(/帰れる/g,"<ruby>帰<rt>かえ</rt></ruby>れる")
+.replace(/帰った/g,"<ruby>帰<rt>かえ</rt></ruby>った")
+.replace(/方が/g,"<ruby>方<rt>ほう</rt></ruby>が")
+.replace(/公園/g,"<ruby>公園<rt>こうえん</rt></ruby>")
+.replace(/集まって/g,"<ruby>集<rt>あつ</rt></ruby>まって")
+.replace(/混んで/g,"<ruby>混<rt>こ</rt></ruby>んで")
+.replace(/大きな/g,"<ruby>大<rt>おお</rt></ruby>きな")
+.replace(/来る/g,"<ruby>来<rt>く</rt></ruby>る")
+.replace(/聞いた/g,"<ruby>聞<rt>き</rt></ruby>いた")
+.replace(/今すぐ/g,"<ruby>今<rt>いま</rt></ruby>すぐ")
+.replace(/移動/g,"<ruby>移動<rt>いどう</rt></ruby>")
+.replace(/塀/g,"<ruby>塀<rt>へい</rt></ruby>")
+.replace(/倒れ/g,"<ruby>倒<rt>たお</rt></ruby>れ")
+.replace(/避けた/g,"<ruby>避<rt>さ</rt></ruby>けた")
+.replace(/帰れ/g,"<ruby>帰<rt>かえ</rt></ruby>れ")
+.replace(/帰る/g,"<ruby>帰<rt>かえ</rt></ruby>る")
+.replace(/地域掲示板/g,"<ruby>地域掲示板<rt>ちいきけいじばん</rt></ruby>")
+.replace(/消防車/g,"<ruby>消防車<rt>しょうぼうしゃ</rt></ruby>")
+.replace(/サイレン/g,"サイレン")
+.replace(/連絡が来る/g,"<ruby>連絡<rt>れんらく</rt></ruby>が<ruby>来<rt>く</rt></ruby>る")
+.replace(/動かない/g,"<ruby>動<rt>うご</rt></ruby>かない")
+.replace(/屋根瓦/g,"<ruby>屋根瓦<rt>やねがわら</rt></ruby>")
+.replace(/駅周辺/g,"<ruby>駅周辺<rt>えきしゅうへん</rt></ruby>")
+.replace(/橋/g,"<ruby>橋<rt>はし</rt></ruby>")
+.replace(/普通/g,"<ruby>普通<rt>ふつう</rt></ruby>")
+.replace(/渡ってる/g,"<ruby>渡<rt>わた</rt></ruby>ってる")
+.replace(/大丈夫/g,"<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>")
+
+.replace(/先生/g,"<ruby>先生<rt>せんせい</rt></ruby>")
+.replace(/本当/g,"<ruby>本当<rt>ほんとう</rt></ruby>")
+.replace(/分からない/g,"<ruby>分<rt>わ</rt></ruby>からない")
+
+.replace(/駅前/g,"<ruby>駅前<rt>えきまえ</rt></ruby>")
+.replace(/煙/g,"<ruby>煙<rt>けむり</rt></ruby>")
+.replace(/投稿/g,"<ruby>投稿<rt>とうこう</rt></ruby>")
+.replace(/公式/g,"<ruby>公式<rt>こうしき</rt></ruby>")
+;
+
+}
 
 const officialInfos = [
   "学校からの連絡はまだ届いていません。地域の防災無線では『安全な場所で待機』と呼びかけていますが、詳しい場所の指定はありません。",
@@ -819,53 +928,115 @@ function goStep3() {
 
   let message = "";
 
-  message += "あなたは地図上に現在地を指定しました。<br>";
+  "あなたは<ruby>地図上<rt>ちずじょう</rt></ruby>に" +
+"<ruby>現在地<rt>げんざいち</rt></ruby>を" +
+"<ruby>指定<rt>してい</rt></ruby>しました。<br>";
   message += "現在地の説明：" + escapeHtml(locationText) + "<br>";
   message += (pinLat==null||pinLng==null) ? "地図ピン未設定<br><br>" : "緯度：" + pinLat.toFixed(6) + "、経度：" + pinLng.toFixed(6) + "<br><br>";
 
-  message += "<strong>地図情報について：</strong><br>";
-  message += "地図は現在地を考えるための参考です。実際の安全性を保証するものではありません。<br><br>";
+  message +=
+"<strong><ruby>地図情報<rt>ちずじょうほう</rt></ruby>について：</strong><br>";
+  message +=
+"<ruby>地図<rt>ちず</rt></ruby>は" +
+"<ruby>現在地<rt>げんざいち</rt></ruby>を" +
+"<ruby>考<rt>かんが</rt></ruby>えるための" +
+"<ruby>参考<rt>さんこう</rt></ruby>です。" +
+"<ruby>実際<rt>じっさい</rt></ruby>の" +
+"<ruby>安全性<rt>あんぜんせい</rt></ruby>を" +
+"<ruby>保証<rt>ほしょう</rt></ruby>するものではありません。<br><br>";
 
   if (imageData) {
-    message += "周囲の写真が記録されています。写真から分かる危険も考えてください。<br><br>";
-  } else {
-    message += "周囲の写真は未登録です。見えている状況を言葉で確認してください。<br><br>";
-  }
+  message +=
+  "<ruby>周囲<rt>しゅうい</rt></ruby>の" +
+  "<ruby>写真<rt>しゃしん</rt></ruby>が" +
+  "<ruby>記録<rt>きろく</rt></ruby>されています。" +
+  "<ruby>写真<rt>しゃしん</rt></ruby>から" +
+  "<ruby>分<rt>わ</rt></ruby>かる" +
+  "<ruby>危険<rt>きけん</rt></ruby>も" +
+  "<ruby>考<rt>かんが</rt></ruby>えてください。<br><br>";
+} else {
+  message +=
+  "<ruby>周囲<rt>しゅうい</rt></ruby>の" +
+  "<ruby>写真<rt>しゃしん</rt></ruby>は" +
+  "<ruby>未登録<rt>みとうろく</rt></ruby>です。" +
+  "<ruby>見<rt>み</rt></ruby>えている" +
+  "<ruby>状況<rt>じょうきょう</rt></ruby>を" +
+  "<ruby>言葉<rt>ことば</rt></ruby>で" +
+  "<ruby>確認<rt>かくにん</rt></ruby>してください。<br><br>";
+}
 
-  if (condition === "動けない") {
-    message += "あなたは自力で移動することが難しい状態です。無理に動かず、安全な姿勢を取り、周囲の人に助けを求める必要があります。<br><br>";
-  } else if (condition === "軽いけが") {
-    message += "軽いけががあります。走ったり無理に移動したりせず、落ち着いて安全な場所を確認してください。<br><br>";
-  } else if (condition === "友人がけが") {
-    message += "友人がけがをしています。自分の安全を確保したうえで、近くの大人や周囲の人に助けを求める必要があります。<br><br>";
-  } else {
-    message += "現在、あなた自身は無事です。ただし、余震や落下物に注意しながら行動する必要があります。<br><br>";
-  }
+ if (condition === "動けない") {
+  message +=
+  "あなたは<ruby>自力<rt>じりき</rt></ruby>で" +
+  "<ruby>移動<rt>いどう</rt></ruby>することが" +
+  "<ruby>難<rt>むずか</rt></ruby>しい" +
+  "<ruby>状態<rt>じょうたい</rt></ruby>です。" +
+  "<ruby>無理<rt>むり</rt></ruby>に" +
+  "<ruby>動<rt>うご</rt></ruby>かず、" +
+  "<ruby>安全<rt>あんぜん</rt></ruby>な" +
+  "<ruby>姿勢<rt>しせい</rt></ruby>を" +
+  "<ruby>取<rt>と</rt></ruby>り、" +
+  "<ruby>周囲<rt>しゅうい</rt></ruby>の" +
+  "<ruby>人<rt>ひと</rt></ruby>に" +
+  "<ruby>助<rt>たす</rt></ruby>けを" +
+  "<ruby>求<rt>もと</rt></ruby>める" +
+  "<ruby>必要<rt>ひつよう</rt></ruby>があります。<br><br>";
 
-  if (placeType === "ブロック塀の近く") {
-    message += "近くにブロック塀があります。倒壊の危険があるため、できるだけ離れてください。";
-    situationBox.className = "result-box emergency";
-  } else if (placeType === "川・橋の近く") {
-    message += "川や橋の近くにいます。橋の損傷や増水情報にも注意が必要です。安易に橋を渡らない判断も必要です。";
-    situationBox.className = "result-box emergency";
-  } else if (placeType === "駅・商店街") {
-    message += "駅や商店街では、看板・ガラス・人の混雑による危険があります。建物から離れ、落下物の少ない場所を探してください。";
-    situationBox.className = "result-box emergency";
-  } else if (placeType === "広い公園") {
-    message += "広い公園の近くにいます。落下物が少ない場所であれば、一時的に安全を確保しやすい可能性があります。";
-    situationBox.className = "result-box good";
-  } else if (placeType === "学校の近く") {
-    message += "学校の近くにいます。学校が安全確認済みとは限りません。周囲の危険を確認し、先生や大人の指示が得られるか考えてください。";
-    situationBox.className = "result-box";
-  } else if (placeType === "自宅の近く") {
-    message += "自宅の近くにいます。ただし、家の中や周囲が安全とは限りません。建物や塀の状況を確認する必要があります。";
-    situationBox.className = "result-box";
-  } else {
-    message += "住宅街では、屋根瓦・塀・電柱・ガラスなどに注意してください。狭い道では避難経路がふさがれる可能性があります。";
-    situationBox.className = "result-box";
-  }
+} else if (condition === "軽いけが") {
 
-  message += "<br><br><strong>注意：</strong>今見えている情報だけで判断せず、地図・現地状況・公式情報・周囲の大人の指示を組み合わせて判断してください。";
+  message +=
+  "<ruby>軽<rt>かる</rt></ruby>いけががあります。" +
+  "<ruby>走<rt>はし</rt></ruby>ったり" +
+  "<ruby>無理<rt>むり</rt></ruby>に" +
+  "<ruby>移動<rt>いどう</rt></ruby>したりせず、" +
+  "<ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>いて" +
+  "<ruby>安全<rt>あんぜん</rt></ruby>な" +
+  "<ruby>場所<rt>ばしょ</rt></ruby>を" +
+  "<ruby>確認<rt>かくにん</rt></ruby>してください。<br><br>";
+
+} else if (condition === "友人がけが") {
+
+  message +=
+  "<ruby>友人<rt>ゆうじん</rt></ruby>がけがをしています。" +
+  "<ruby>自分<rt>じぶん</rt></ruby>の" +
+  "<ruby>安全<rt>あんぜん</rt></ruby>を" +
+  "<ruby>確保<rt>かくほ</rt></ruby>したうえで、" +
+  "<ruby>近<rt>ちか</rt></ruby>くの" +
+  "<ruby>大人<rt>おとな</rt></ruby>や" +
+  "<ruby>周囲<rt>しゅうい</rt></ruby>の" +
+  "<ruby>人<rt>ひと</rt></ruby>に" +
+  "<ruby>助<rt>たす</rt></ruby>けを" +
+  "<ruby>求<rt>もと</rt></ruby>める" +
+  "<ruby>必要<rt>ひつよう</rt></ruby>があります。<br><br>";
+
+} else {
+
+  message +=
+  "<ruby>現在<rt>げんざい</rt></ruby>、" +
+  "あなた<ruby>自身<rt>じしん</rt></ruby>は" +
+  "<ruby>無事<rt>ぶじ</rt></ruby>です。" +
+  "ただし、" +
+  "<ruby>余震<rt>よしん</rt></ruby>や" +
+  "<ruby>落下物<rt>らっかぶつ</rt></ruby>に" +
+  "<ruby>注意<rt>ちゅうい</rt></ruby>しながら" +
+  "<ruby>行動<rt>こうどう</rt></ruby>する" +
+  "<ruby>必要<rt>ひつよう</rt></ruby>があります。<br><br>";
+}
+
+  message +=
+"<br><br><strong><ruby>注意<rt>ちゅうい</rt></ruby>：</strong>" +
+"<ruby>今<rt>いま</rt></ruby>" +
+"<ruby>見<rt>み</rt></ruby>えている" +
+"<ruby>情報<rt>じょうほう</rt></ruby>だけで" +
+"<ruby>判断<rt>はんだん</rt></ruby>せず、" +
+"<ruby>地図<rt>ちず</rt></ruby>・" +
+"<ruby>現地状況<rt>げんちじょうきょう</rt></ruby>・" +
+"<ruby>公式情報<rt>こうしきじょうほう</rt></ruby>・" +
+"<ruby>周囲<rt>しゅうい</rt></ruby>の" +
+"<ruby>大人<rt>おとな</rt></ruby>の" +
+"<ruby>指示<rt>しじ</rt></ruby>を" +
+"<ruby>組<rt>く</rt></ruby>み<ruby>合<rt>あ</rt></ruby>わせて" +
+"<ruby>判断<rt>はんだん</rt></ruby>してください。";
 
   situationBox.innerHTML = message;
   showOnly("step3");
@@ -876,7 +1047,8 @@ function goStep4() {
   selectedSNSPosts = shuffleArray(snsPosts).slice(0, 5);
 
   document.getElementById("officialInfoBox").innerHTML =
-    "<strong>入ってきた情報：</strong><br>" + escapeHtml(selectedOfficialInfo);
+  "<strong>入ってきた情報：</strong><br>" +
+  addRuby(escapeHtml(selectedOfficialInfo));
 
   const snsArea = document.getElementById("snsArea");
   snsArea.innerHTML = "";
@@ -885,7 +1057,7 @@ function goStep4() {
     snsArea.innerHTML += `
       <div class="sns-post">
         <div class="sns-name">@${escapeHtml(post.name)}</div>
-        <div class="sns-text">${escapeHtml(post.text)}</div>
+       <div class="sns-text">${addRuby(escapeHtml(post.text))}</div>
       </div>
     `;
   });
@@ -918,7 +1090,8 @@ function goStep7() {
   selectedSituationChange = randomItem(situationChanges);
 
   document.getElementById("changeBox").innerHTML =
-    "<strong>状況変化：</strong><br>" + escapeHtml(selectedSituationChange);
+  "<strong>状況変化：</strong><br>" +
+  addRuby(escapeHtml(selectedSituationChange));
 
   showOnly("step7");
 }
@@ -944,51 +1117,215 @@ function showGuidance() {
   let guidance = "";
 
   if (condition === "動けない") {
-    guidance += "無理に移動しないでください。まず頭部を守り、安全な姿勢をとります。近くの人に助けを求め、先生・保護者・119番などにつながる手段を考えます。<br><br>";
-    guidanceBox.className = "result-box emergency";
-  } else if (condition === "友人がけが") {
-    guidance += "まず自分の安全を確保してください。そのうえで友人を一人にせず、近くの大人や周囲の人に助けを求めます。<br><br>";
-    guidanceBox.className = "result-box emergency";
-  } else if (placeType === "ブロック塀の近く") {
-    guidance += "ブロック塀からすぐに離れてください。狭い道を避け、落下物の少ない開けた場所へ移動します。<br><br>";
-    guidanceBox.className = "result-box emergency";
-  } else if (placeType === "川・橋の近く") {
-    guidance += "橋や川沿いから離れます。橋を渡る必要がある場合でも、損傷や混雑がないか慎重に確認してください。<br><br>";
-    guidanceBox.className = "result-box emergency";
-  } else if (placeType === "駅・商店街") {
-    guidance += "建物のガラス、看板、外壁から離れてください。人の流れに流されず、落ち着いて開けた場所を探します。<br><br>";
-    guidanceBox.className = "result-box emergency";
-  } else {
-    guidance += "周囲の安全を確認し、落下物・塀・ガラス・火災・混雑を避けて行動してください。<br><br>";
-    guidanceBox.className = "result-box";
-  }
 
-  if (infoTrust === "信じて行動する") {
-    guidance += "<strong>情報判断について：</strong><br>未確認情報をそのまま信じて行動するのは危険です。発信元、複数情報との一致、公式情報の有無を確認する必要があります。<br><br>";
-  } else if (infoTrust === "一部参考にする") {
-    guidance += "<strong>情報判断について：</strong><br>一部参考にする判断は現実的です。ただし、SNS情報だけで移動先を決めず、目の前の危険と照らし合わせてください。<br><br>";
-  } else if (infoTrust === "まだ信じない") {
-    guidance += "<strong>情報判断について：</strong><br>未確認情報をすぐ信じない姿勢は大切です。ただし、危険の可能性がある情報は完全に無視せず、注意材料として扱いましょう。<br><br>";
-  } else {
-    guidance += "<strong>情報判断について：</strong><br>他の情報と照合しようとする判断は重要です。公式情報、周囲の状況、大人の指示、自分の観察を組み合わせて判断しましょう。<br><br>";
-  }
+  guidance +=
+  "<ruby>無理<rt>むり</rt></ruby>に" +
+  "<ruby>移動<rt>いどう</rt></ruby>しないでください。" +
+  "まず<ruby>頭部<rt>とうぶ</rt></ruby>を" +
+  "<ruby>守<rt>まも</rt></ruby>り、" +
+  "<ruby>安全<rt>あんぜん</rt></ruby>な" +
+  "<ruby>姿勢<rt>しせい</rt></ruby>をとります。" +
+  "<ruby>近<rt>ちか</rt></ruby>くの" +
+  "<ruby>人<rt>ひと</rt></ruby>に" +
+  "<ruby>助<rt>たす</rt></ruby>けを" +
+  "<ruby>求<rt>もと</rt></ruby>め、" +
+  "<ruby>先生<rt>せんせい</rt></ruby>・" +
+  "<ruby>保護者<rt>ほごしゃ</rt></ruby>・119<ruby>番<rt>ばん</rt></ruby>などにつながる" +
+  "<ruby>手段<rt>しゅだん</rt></ruby>を" +
+  "<ruby>考<rt>かんが</rt></ruby>えます。<br><br>";
 
-  guidance += "<strong>最終的な避難誘導：</strong><br>";
+  guidanceBox.className = "result-box emergency";
 
-  if (secondAction.includes("待機")) {
-    guidance += "その場で待機する場合も、建物・塀・ガラス・車道から離れ、余震に備えてください。周囲が危険になった場合は、すぐに移動判断に切り替えます。";
-  } else if (secondAction.includes("広い場所")) {
-    guidance += "広い場所へ移動する場合は、最短距離だけでなく安全な経路を選んでください。細い道、橋、ブロック塀、混雑場所を避けます。";
-  } else if (secondAction.includes("学校")) {
-    guidance += "学校へ戻る場合は、学校までの道が安全かを優先してください。無理に戻らず、近くの安全な場所で待機する判断も必要です。";
-  } else if (secondAction.includes("自宅")) {
-    guidance += "自宅方面へ進む場合も、自宅や道が安全とは限りません。危険を感じた場合は、帰宅よりも安全確保を優先します。";
-  } else {
-    guidance += "周囲の大人に助けを求める判断は有効です。自分だけで判断できないときは、近くの大人、地域の人、先生、消防・警察等につながる方法を考えます。";
-  }
+} else if (condition === "友人がけが") {
 
-  guidanceBox.innerHTML = guidance;
-  showOnly("step9");
+  guidance +=
+  "まず<ruby>自分<rt>じぶん</rt></ruby>の" +
+  "<ruby>安全<rt>あんぜん</rt></ruby>を" +
+  "<ruby>確保<rt>かくほ</rt></ruby>してください。" +
+  "そのうえで" +
+  "<ruby>友人<rt>ゆうじん</rt></ruby>を" +
+  "<ruby>一人<rt>ひとり</rt></ruby>にせず、" +
+  "<ruby>近<rt>ちか</rt></ruby>くの" +
+  "<ruby>大人<rt>おとな</rt></ruby>や" +
+  "<ruby>周囲<rt>しゅうい</rt></ruby>の" +
+  "<ruby>人<rt>ひと</rt></ruby>に" +
+  "<ruby>助<rt>たす</rt></ruby>けを" +
+  "<ruby>求<rt>もと</rt></ruby>めます。<br><br>";
+
+  guidanceBox.className = "result-box emergency";
+
+} else if (placeType === "ブロック塀の近く") {
+
+  guidance +=
+  "ブロック<ruby>塀<rt>べい</rt></ruby>からすぐに" +
+  "<ruby>離<rt>はな</rt></ruby>れてください。" +
+  "<ruby>狭<rt>せま</rt></ruby>い" +
+  "<ruby>道<rt>みち</rt></ruby>を" +
+  "<ruby>避<rt>さ</rt></ruby>け、" +
+  "<ruby>落下物<rt>らっかぶつ</rt></ruby>の" +
+  "<ruby>少<rt>すく</rt></ruby>ない" +
+  "<ruby>開<rt>ひら</rt></ruby>けた" +
+  "<ruby>場所<rt>ばしょ</rt></ruby>へ" +
+  "<ruby>移動<rt>いどう</rt></ruby>します。<br><br>";
+
+  guidanceBox.className = "result-box emergency";
+
+} else if (placeType === "川・橋の近く") {
+
+  guidance +=
+  "<ruby>橋<rt>はし</rt></ruby>や" +
+  "<ruby>川沿<rt>かわぞ</rt></ruby>いから" +
+  "<ruby>離<rt>はな</rt></ruby>れます。" +
+  "<ruby>橋<rt>はし</rt></ruby>を" +
+  "<ruby>渡<rt>わた</rt></ruby>る" +
+  "<ruby>必要<rt>ひつよう</rt></ruby>がある" +
+  "<ruby>場合<rt>ばあい</rt></ruby>でも、" +
+  "<ruby>損傷<rt>そんしょう</rt></ruby>や" +
+  "<ruby>混雑<rt>こんざつ</rt></ruby>がないか" +
+  "<ruby>慎重<rt>しんちょう</rt></ruby>に" +
+  "<ruby>確認<rt>かくにん</rt></ruby>してください。<br><br>";
+
+  guidanceBox.className = "result-box emergency";
+
+} else if (placeType === "駅・商店街") {
+
+  guidance +=
+  "<ruby>建物<rt>たてもの</rt></ruby>のガラス、" +
+  "<ruby>看板<rt>かんばん</rt></ruby>、" +
+  "<ruby>外壁<rt>がいへき</rt></ruby>から" +
+  "<ruby>離<rt>はな</rt></ruby>れてください。" +
+  "<ruby>人<rt>ひと</rt></ruby>の" +
+  "<ruby>流<rt>なが</rt></ruby>れに" +
+  "<ruby>流<rt>なが</rt></ruby>されず、" +
+  "<ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>いて" +
+  "<ruby>開<rt>ひら</rt></ruby>けた" +
+  "<ruby>場所<rt>ばしょ</rt></ruby>を" +
+  "<ruby>探<rt>さが</rt></ruby>します。<br><br>";
+
+  guidanceBox.className = "result-box emergency";
+
+} else {
+
+  guidance +=
+  "<ruby>周囲<rt>しゅうい</rt></ruby>の" +
+  "<ruby>安全<rt>あんぜん</rt></ruby>を" +
+  "<ruby>確認<rt>かくにん</rt></ruby>し、" +
+  "<ruby>落下物<rt>らっかぶつ</rt></ruby>・" +
+  "<ruby>塀<rt>へい</rt></ruby>・" +
+  "ガラス・" +
+  "<ruby>火災<rt>かさい</rt></ruby>・" +
+  "<ruby>混雑<rt>こんざつ</rt></ruby>を" +
+  "<ruby>避<rt>さ</rt></ruby>けて" +
+  "<ruby>行動<rt>こうどう</rt></ruby>してください。<br><br>";
+
+  guidanceBox.className = "result-box";
+}
+
+guidance +=
+"<strong><ruby>情報判断<rt>じょうほうはんだん</rt></ruby>について：</strong><br>";
+
+guidance +=
+"<strong><ruby>最終的<rt>さいしゅうてき</rt></ruby>な" +
+"<ruby>避難誘導<rt>ひなんゆうどう</rt></ruby>：</strong><br>";
+
+if (secondAction.includes("待機")) {
+
+  guidance +=
+  "その<ruby>場<rt>ば</rt></ruby>で" +
+  "<ruby>待機<rt>たいき</rt></ruby>する" +
+  "<ruby>場合<rt>ばあい</rt></ruby>も、" +
+  "<ruby>建物<rt>たてもの</rt></ruby>・" +
+  "<ruby>塀<rt>へい</rt></ruby>・" +
+  "ガラス・" +
+  "<ruby>車道<rt>しゃどう</rt></ruby>から" +
+  "<ruby>離<rt>はな</rt></ruby>れ、" +
+  "<ruby>余震<rt>よしん</rt></ruby>に" +
+  "<ruby>備<rt>そな</rt></ruby>えてください。" +
+  "<ruby>周囲<rt>しゅうい</rt></ruby>が" +
+  "<ruby>危険<rt>きけん</rt></ruby>になった" +
+  "<ruby>場合<rt>ばあい</rt></ruby>は、" +
+  "すぐに<ruby>移動判断<rt>いどうはんだん</rt></ruby>に" +
+  "<ruby>切<rt>き</rt></ruby>り<ruby>替<rt>か</rt></ruby>えます。";
+
+} else if (secondAction.includes("広い場所")) {
+
+  guidance +=
+  "<ruby>広<rt>ひろ</rt></ruby>い" +
+  "<ruby>場所<rt>ばしょ</rt></ruby>へ" +
+  "<ruby>移動<rt>いどう</rt></ruby>する" +
+  "<ruby>場合<rt>ばあい</rt></ruby>は、" +
+  "<ruby>最短距離<rt>さいたんきょり</rt></ruby>だけでなく" +
+  "<ruby>安全<rt>あんぜん</rt></ruby>な" +
+  "<ruby>経路<rt>けいろ</rt></ruby>を" +
+  "<ruby>選<rt>えら</rt></ruby>んでください。" +
+  "<ruby>細<rt>ほそ</rt></ruby>い" +
+  "<ruby>道<rt>みち</rt></ruby>、" +
+  "<ruby>橋<rt>はし</rt></ruby>、" +
+  "ブロック<ruby>塀<rt>べい</rt></ruby>、" +
+  "<ruby>混雑場所<rt>こんざつばしょ</rt></ruby>を" +
+  "<ruby>避<rt>さ</rt></ruby>けます。";
+
+} else if (secondAction.includes("学校")) {
+
+  guidance +=
+  "<ruby>学校<rt>がっこう</rt></ruby>へ" +
+  "<ruby>戻<rt>もど</rt></ruby>る" +
+  "<ruby>場合<rt>ばあい</rt></ruby>は、" +
+  "<ruby>学校<rt>がっこう</rt></ruby>までの" +
+  "<ruby>道<rt>みち</rt></ruby>が" +
+  "<ruby>安全<rt>あんぜん</rt></ruby>かを" +
+  "<ruby>優先<rt>ゆうせん</rt></ruby>して" +
+  "<ruby>確認<rt>かくにん</rt></ruby>してください。" +
+  "<ruby>無理<rt>むり</rt></ruby>に" +
+  "<ruby>戻<rt>もど</rt></ruby>らず、" +
+  "<ruby>近<rt>ちか</rt></ruby>くの" +
+  "<ruby>安全<rt>あんぜん</rt></ruby>な" +
+  "<ruby>場所<rt>ばしょ</rt></ruby>で" +
+  "<ruby>待機<rt>たいき</rt></ruby>する" +
+  "<ruby>判断<rt>はんだん</rt></ruby>も" +
+  "<ruby>必要<rt>ひつよう</rt></ruby>です。";
+
+} else if (secondAction.includes("自宅")) {
+
+  guidance +=
+  "<ruby>自宅方面<rt>じたくほうめん</rt></ruby>へ" +
+  "<ruby>進<rt>すす</rt></ruby>む" +
+  "<ruby>場合<rt>ばあい</rt></ruby>も、" +
+  "<ruby>自宅<rt>じたく</rt></ruby>や" +
+  "<ruby>道<rt>みち</rt></ruby>が" +
+  "<ruby>安全<rt>あんぜん</rt></ruby>とは" +
+  "<ruby>限<rt>かぎ</rt></ruby>りません。" +
+  "<ruby>危険<rt>きけん</rt></ruby>を" +
+  "<ruby>感<rt>かん</rt></ruby>じた" +
+  "<ruby>場合<rt>ばあい</rt></ruby>は、" +
+  "<ruby>帰宅<rt>きたく</rt></ruby>よりも" +
+  "<ruby>安全確保<rt>あんぜんかくほ</rt></ruby>を" +
+  "<ruby>優先<rt>ゆうせん</rt></ruby>します。";
+
+} else {
+
+  guidance +=
+  "<ruby>周囲<rt>しゅうい</rt></ruby>の" +
+  "<ruby>大人<rt>おとな</rt></ruby>に" +
+  "<ruby>助<rt>たす</rt></ruby>けを" +
+  "<ruby>求<rt>もと</rt></ruby>める" +
+  "<ruby>判断<rt>はんだん</rt></ruby>は" +
+  "<ruby>有効<rt>ゆうこう</rt></ruby>です。" +
+  "<ruby>自分<rt>じぶん</rt></ruby>だけで" +
+  "<ruby>判断<rt>はんだん</rt></ruby>できないときは、" +
+  "<ruby>近<rt>ちか</rt></ruby>くの" +
+  "<ruby>大人<rt>おとな</rt></ruby>、" +
+  "<ruby>地域<rt>ちいき</rt></ruby>の" +
+  "<ruby>人<rt>ひと</rt></ruby>、" +
+  "<ruby>先生<rt>せんせい</rt></ruby>、" +
+  "<ruby>消防<rt>しょうぼう</rt></ruby>・" +
+  "<ruby>警察<rt>けいさつ</rt></ruby><ruby>等<rt>とう</rt></ruby>に" +
+  "つながる<ruby>方法<rt>ほうほう</rt></ruby>を" +
+  "<ruby>考<rt>かんが</rt></ruby>えます。";
+}
+
+guidanceBox.innerHTML = guidance;
+showOnly("step9");
 }
 
 function saveRecord() {
