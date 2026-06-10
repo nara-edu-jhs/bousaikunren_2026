@@ -1224,6 +1224,26 @@ function showGuidance() {
 guidance +=
 "<strong><ruby>情報判断<rt>じょうほうはんだん</rt></ruby>について：</strong><br>";
 
+if(infoTrust === "信じて行動する"){
+  guidance +=
+  "SNSや<ruby>未確認情報<rt>みかくにんじょうほう</rt></ruby>をそのまま<ruby>信<rt>しん</rt></ruby>じることには<ruby>危険<rt>きけん</rt></ruby>があります。<ruby>発信元<rt>はっしんもと</rt></ruby>や<ruby>複数<rt>ふくすう</rt></ruby>の<ruby>情報源<rt>じょうほうげん</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>することが<ruby>大切<rt>たいせつ</rt></ruby>です。<br><br>";
+
+}else if(infoTrust === "一部参考にする"){
+
+  guidance +=
+  "<ruby>情報<rt>じょうほう</rt></ruby>をそのまま<ruby>信<rt>しん</rt></ruby>じず、<ruby>参考<rt>さんこう</rt></ruby>として<ruby>扱<rt>あつか</rt></ruby>う<ruby>姿勢<rt>しせい</rt></ruby>は<ruby>大切<rt>たいせつ</rt></ruby>です。<ruby>実際<rt>じっさい</rt></ruby>の<ruby>状況<rt>じょうきょう</rt></ruby>や<ruby>公式情報<rt>こうしきじょうほう</rt></ruby>もあわせて<ruby>確認<rt>かくにん</rt></ruby>しましょう。<br><br>";
+
+}else if(infoTrust === "まだ信じない"){
+
+  guidance +=
+  "<ruby>未確認情報<rt>みかくにんじょうほう</rt></ruby>をすぐに<ruby>信<rt>しん</rt></ruby>じない<ruby>判断<rt>はんだん</rt></ruby>は<ruby>情報災害<rt>じょうほうさいがい</rt></ruby>を<ruby>防<rt>ふせ</rt></ruby>ぐうえで<ruby>重要<rt>じゅうよう</rt></ruby>です。<br><br>";
+
+}else if(infoTrust === "他の情報と照合する"){
+
+  guidance +=
+  "<ruby>複数<rt>ふくすう</rt></ruby>の<ruby>情報<rt>じょうほう</rt></ruby>を<ruby>照合<rt>しょうごう</rt></ruby>して<ruby>判断<rt>はんだん</rt></ruby>する<ruby>姿勢<rt>しせい</rt></ruby>は<ruby>非常<rt>ひじょう</rt></ruby>に<ruby>重要<rt>じゅうよう</rt></ruby>です。<ruby>公式情報<rt>こうしきじょうほう</rt></ruby>や<ruby>現地状況<rt>げんちじょうきょう</rt></ruby>もあわせて<ruby>確認<rt>かくにん</rt></ruby>しましょう。<br><br>";
+}
+
 guidance +=
 "<strong><ruby>最終的<rt>さいしゅうてき</rt></ruby>な" +
 "<ruby>避難誘導<rt>ひなんゆうどう</rt></ruby>：</strong><br>";
